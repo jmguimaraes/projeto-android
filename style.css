@@ -6,88 +6,99 @@
     font-weight: normal;
     font-style: normal;
 }
+
 a.externo::after {
     content: '\00A0\1F517';
+}
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: rgb(110, 196, 125);
+    line-height: 1.6;
+    color: #333;
 }
 
 header {
     background-image: linear-gradient(to bottom, #2B8C44, #1F7334, #115923);
     color: white;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-top: 40px;
-    margin: auto;
+    padding: 20px;
 }
+
 header > h1 {
     margin-bottom: 20px;
     font-size: 3em;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.452);
 }
+
 header > p {
-    font-family:Arial, Helvetica, sans-serif;
     font-size: medium;
     font-weight: 400;
-    margin: auto;
-    padding-right: 10px;
-    padding-left: 10px;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.473);
 }
 
-header > nav {
-    text-align: left;
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
     padding: 10px;
-    text-decoration: none;
-    margin-right: 30px;
-    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.144);
 }
 
-a {
-    color: white;
-    font-weight: bold;
-    padding: 3px;
-}
-a:hover {
-    background-color: #2B8C44;
-}
 nav > a {
     color: white;
     text-decoration: none;
-    padding: 10px;
-    margin-top: 5px;
+    padding: 10px 15px;
+    background: #333;
     border-radius: 5px;
     transition-duration: 0.3s;
 }
 
-main p{
+nav > a:hover {
+    background-color: #2B8C44;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.507);
+}
+
+main p {
     margin: 15px 0px;
     text-align: justify;
     text-indent: 30px;
     line-height: 2em;
     font-size: 1em;
 }
-main strong{
+
+main strong {
     color: #115923;
     font-weight: bold;
     padding: 2px 6px;
 }
+
 p > a {
     color: black;
     font-weight: bold;
 }
-body {
-    background-color: rgb(110, 196, 125);
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
 }
-main{
-    background-color: white;
-    width: 800px;
-    padding: 10px;
-    margin: auto;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.507);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    
-}
+
 div.video {
     background-color: #088625;
     margin: 0px -20px 30px -20px;
@@ -95,32 +106,40 @@ div.video {
     padding-bottom: 58%;
     position: relative;
 }
+
 div.video > iframe {
     position: absolute;
     top: 3%;
     left: 3%;
     width: 92%;
-    height:95% ;
+    height: 95%;
 }
+
 article > h1 {
-    font-family:'idroid';
+    font-family: 'idroid';
     color: darkgreen;
 }
+
 article > p {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
 }
+
 article > h2 {
     font-family: 'idroid';
     color: #05270d;
-    background-image: linear-gradient(to right,#2B8C44, transparent);
+    background-image: linear-gradient(to right, #2B8C44, transparent);
 }
+
 aside {
     background-color: #5add7aa9;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.473);
+    margin-top: 20px;
+    border-left: 5px solid #4CAF50;
 }
+
 aside > h3 {
     background-color: #024712;
     color: white;
@@ -128,17 +147,35 @@ aside > h3 {
     margin: -10px -10px 0px -10px;
     border-radius: 10px 10px 0px 0px;
 }
+
 aside > ul {
     list-style-position: inside;
     columns: 2;
 }
+
 footer {
-    color: white;
-    background-color: darkolivegreen;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 0.8em;
-    padding: 5px;
     text-align: center;
-    margin: auto;
+    background: #333;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav > a {
+        display: block;
+        padding: 10px;
+    }
+    main {
+        width: 90%;
+        padding: 15px;
+    }
 }
